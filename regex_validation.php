@@ -68,6 +68,15 @@ function indian_pincode_validation($pincode){
     return 0;
   }
 }
+//US ZIP/PIN CODE Number validation
+function us_pincode_validation($pincode){
+  $regex = '/\d{5}([\-]?\d{4})?$/';
+  if (preg_match($regex,$pincode)) {
+    return 1;
+  }else {
+    return 0;
+  }
+}
 // HTML tag validation
 function html_tag_validation($html_tag){
   $regex = '/((<+[a-z]+>)|<+/+[a-z]+>)/';
